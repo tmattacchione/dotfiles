@@ -85,6 +85,11 @@ vim.opt.showmode = true -- Hide the mode you're currently in (status bar)
 vim.opt.termguicolors = true           -- Use colorschemes you set
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1 -- True Color Support
 
+-- Termninal Shell
+-- ----------------------------------------------------------------------------
+vim.opt.shell        = '/bin/zsh -i'
+vim.opt.shellcmdflag = '-ic'
+
 
 -- Mouse Enhancement - Kitty
 -- ----------------------------------------------------------------------------
@@ -484,3 +489,87 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- remove vim's default options
 vim.g.markdown_recommended_style = 0
 
+
+-- ----------------------------------------------------------------------------
+-- jai
+-- ----------------------------------------------------------------------------
+
+--[[
+
+@usage
+  Run <leader>b to run `jai first.jai` inside nvim.
+
+@about
+  I was tired of moving to a new terminal window and having to run `jai
+  first.jai`.  I would rather not have to leave nvim.  I should also note that
+  this is a possibility here because jai has fast compile times.
+
+@setup
+  If you've found this and want to use it, here's a few notes about my
+  setup; right or wrong:
+
+  * my `jai` command is an alias
+  * my `jai` command is defined in `.zshrc`
+
+  As a result, for the `jai` command to be found when running from nvim I had
+  to update my `vim.opt.shell` and `vim.opt.shellcmdflag` (see above) to use
+  an interactive shell.  This has downsides, I'm sure, but we can revisit if
+  they turn into a problem.
+
+@todo
+  This isn't a complete tool.  I'm strictly adding a quick version of this
+  and testing it, but here are things which could be deemed problems, but I
+  don't really want to solve them yet.  Sometimes I'll note why below:
+
+  * a single jai build file name will work
+    * Across all development projects I work on internally, and jai is only
+      for _my_ projects at the moment, I use this convention.  This can be
+      revisited if I start working on other projects.  You can change the name,
+      but then you would have to keep updating this file as you change
+      projects, so a robust approach could be helpful, but honestly, just
+      following a convention is cool also, if you can.
+  * first.jai is the only found in the dir where you started the nvim instance
+    * Searching for these files is always a tricky game.  I don't want to play.
+  * termopen
+    * This is used because I wanted syntax highlighting, but it seems that
+      it's overkill?  Could be my lack of understanding as this is my first
+      time building a little nvim tool.
+]]
+
+-- @note this is mutated by `build_jai`...because I'm a heathen, so i've
+-- marked any variable which will be mutated with `_mutable` because `!` is
+-- not valid in lua.
+local build_jai_config = {
+  output_window_mutable = nil,
+  build_file            = "first.jai",
+  output_buffer_name    = "jai-output-buffer",
+}
+
+local function build_jai(jai)
+  -- @note check project has a build file
+  if vim.fn.filereadable(jai.build_file) == 0 then
+    vim.notify("`" .. jai.build_file .. "` not found in current directory", vim.log.levels.WARN)
+    return
+  end
+
+  vim.cmd("w")
+
+  -- @note open output window or reuse current one
+  if jai.output_window_mutable == nil or not vim.api.nvim_win_is_valid(jai.output_window_mutable) then
+    vim.cmd("botright vsplit")
+    jai.output_window_mutable = vim.api.nvim_get_current_win()
+  else
+    vim.api.nvim_set_current_win(jai.output_window_mutable)
+  end
+
+  -- @note create new terminal window
+  vim.cmd("enew")
+  vim.api.nvim_buf_set_name(0, jai.output_buffer_name)
+
+  -- @note build
+  vim.fn.termopen("jai " .. jai.build_file)
+
+  vim.cmd("wincmd p")
+end
+
+vim.keymap.set("n", "<leader>b", function() build_jai(build_jai_config) end, { desc = "build jai binary" })
