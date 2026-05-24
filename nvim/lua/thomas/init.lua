@@ -226,15 +226,11 @@ require("lazy").setup({
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     event  = { "BufReadPre", "BufNewFile" },
     build  = ":TSUpdate",
     config = function()
-      local treesitter = require("nvim-treesitter.configs")
-
-      treesitter.setup({
-        highlight = {
-          enable = true,
-        },
+      require("nvim-treesitter").setup({
         ensure_installed = {
           "c",
           "html",
