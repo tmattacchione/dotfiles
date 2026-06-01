@@ -227,26 +227,32 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     branch = "main",
-    event  = { "BufReadPre", "BufNewFile" },
     build  = ":TSUpdate",
+    event  = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("nvim-treesitter").setup({
-        ensure_installed = {
-          "c",
-          "html",
-          "css",
-          "vim",
-          "lua",
-          "json",
-          "javascript",
-          "clojure",
-          "rust",
-          "markdown",
-          "markdown_inline",
-        },
-      })
-    end,
-  },
+        local ts = require("nvim-treesitter")
+
+        ts.install("c")
+        ts.install("html")
+        ts.install("css")
+        ts.install("vim")
+        ts.install("vimdoc")
+        ts.install("lua")
+        ts.install("json")
+        ts.install("javascript")
+        ts.install("clojure")
+        ts.install("rust")
+        ts.install("markdown")
+        ts.install("markdown_inline")
+
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = { "c", "html", "css", "vim", "help", "lua", "json", "javascript", "clojure", "rust", "markdown" },
+          callback = function()
+            vim.treesitter.start()
+          end,
+        })
+  end,
+},
 
   -- File Search & Navigation
   -- --------------------------------------------------------------------------
