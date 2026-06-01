@@ -254,7 +254,7 @@ require("lazy").setup({
   -- Search files/folders
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
+    branch = 'master',
     dependencies = {
       'nvim-telescope/telescope-live-grep-args.nvim',
       'nvim-lua/plenary.nvim',
