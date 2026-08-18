@@ -24,10 +24,5 @@ git/.gitconfig.local
 .clojure/.cpcache
 .clojure/.lsp
 
-# atom
-atom/packages/
-atom/storage/
-atom/recovery/
-
 # fred
 fred/config/fred.session
