@@ -81,6 +81,7 @@ rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
 rm -rf ~/.config/ghostty
+rm -rf ~/.config/fred
 
 info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
@@ -99,6 +100,8 @@ ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
 ln -sf ~/dotfiles/kitty                        ~/.config/kitty
 ln -sf ~/dotfiles/ghostty                      ~/.config/ghostty
 ln -sf ~/dotfiles/xcode/.lldbinit-Xcode        ~/.lldbinit-Xcode
+ln -sf ~/dotfiles/fred/config                  ~/.config/fred
+
 
 
 # macOS init

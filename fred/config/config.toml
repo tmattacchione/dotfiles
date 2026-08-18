@@ -1,0 +1,255 @@
+[editor.colors]
+default_font_color = 0xd4d4d4ff
+whitespace = 0xe3e4e229
+carriage_return = 0xff0000ff
+search_result = 0xed8212aa
+selection_color = 0x9fff2e
+token_match = 0xd4d4d4aa
+active_line_number = 0x8a8592ff
+inactive_line_number = 0x444248ff
+line_number_sep = 0x8a8592ff
+line_ruler = 0x8a8592ff
+cursor = 0xffffffff
+prim_cursor = 0xff0000ff
+tray = 0xffffffff
+need_save = 0xff0000ff
+background = 0x1f1f1fff
+warning = 0xe3811cff
+error = 0xff0000ff
+auto_line_ending = 0xff00ff
+vim_cursor_color = 0xff00ff
+async_highlight = 0x446ccc47
+selected_editor = 0x7fffff
+line_guides = 0xadd6ff26
+active_line_guide = 0xadd6ffff
+highlight_line_copy = 0x9a02ff
+highlight_line_edit = 0x9fffff
+cursor_line_outline = 0x44424850
+cursor_line_fill = 0x44424850
+
+[editor.state]
+show_line_numbers = true
+auto_syntax_highlighting = true
+auto_line_endings = true
+render_whitespace = false
+tabs_as_spaces = true
+spellcheck_by_default = false
+disable_line_highlight = false
+html_copy_background = true
+vim_mode = false
+suppress_async_search = false
+suppress_threaded_search = false
+suppress_suggestions = false
+modulate_color_glyphs = false
+embold_vim_cursor = true
+embold_cursor = false
+line_guides = true
+relative_numbering = false
+clear_find = false
+return_accept_suggestion = true
+show_line_rulers = false
+enable_active_line_fill = false
+enable_prim_cursor_fill = false
+noisy_parse = false
+noisy_search = false
+noisy_events = false
+noisy_flattened_events = false
+noisy_find_all = false
+font_size_px = 14
+tray_font_size = 14
+tabstop = 4
+line_number_style = 'LineNumberStyle_Classic'
+line_rulers = []
+
+[[editor.highlights]]
+color = 0xc586c0ff
+tags = ['keyword.directive',
+'keyword.directive.define',
+'keyword.directive.include',
+'macro.function',
+'macro.define',
+'macro.definition']
+
+[[editor.highlights]]
+color = 0xc586c0ff
+tags = ['keyword.alloc',
+'keyword.return',
+'keyword.repeat',
+'keyword.conditional',
+'keyword.conditional.ternary',
+'keyword.exception',
+'keyword.coroutine',
+'keyword.coroutine.return']
+
+[[editor.highlights]]
+color = 0x569cd6ff
+tags = ['keyword',
+'keyword.operator',
+'keyword.storage',
+'boolean',
+'function.builtin',
+'type.builtin',
+'type.qualifier',
+'tag']
+
+[[editor.highlights]]
+color = 0x569cd6ff
+tags = ['variable.builtin']
+
+[[editor.highlights]]
+color = 0xdcdcaaff
+tags = ['function']
+
+[[editor.highlights]]
+color = 0xdcdcaaff
+tags = ['function.call']
+
+[[editor.highlights]]
+color = 0xdcdcaaff
+tags = ['function.method',
+'function.method.call']
+
+[[editor.highlights]]
+color = 0x4ec9b0ff
+tags = ['type',
+'property']
+
+[[editor.highlights]]
+color = 0x817d82ff
+tags = ['attribute']
+
+[[editor.highlights]]
+color = 0xb5cea8ff
+tags = ['constant',
+'constant.builtin',
+'number']
+
+[[editor.highlights]]
+color = 0xce9178ff
+tags = ['string',
+'string.escape',
+'character']
+
+[[editor.highlights]]
+color = 0x6a9955ff
+tags = ['comment']
+
+[[editor.highlights]]
+color = 0xe3811cff
+tags = ['operator']
+
+[[editor.highlights]]
+color = 0x4ec9b0ff
+tags = ['scope.name']
+
+[[editor.highlights]]
+color = 0xf44747ff
+tags = ['embedded']
+
+[diff.colors]
+del = 0xff0000ff
+ins = 0xff00ff
+eq = 0xffffffff
+trimmed_text = 0xe3811cff
+graph_link = 0xbd42b7ff
+selected_node_color = 0xed8212aa
+last_save_node_color = 0xff00ff
+external_change_node_color = 0xb11be3ff
+
+[diff.state]
+diff_font_size = 14
+
+[file_explorer.colors]
+default_font_color = 0xffffffff
+relative_dir_font_color = 0x6b7078ff
+actively_rooted = 0x98ffff
+background = 0xff
+selection_color = 0x7e8081aa
+match_color = 0xed8212aa
+directory_color = 0x6037c8ff
+unknown_color = 0xff0000ff
+B_color = 0xffffffff
+KB_color = 0x64dbeaff
+MB_color = 0x9627d8ff
+GB_color = 0xcd3256ff
+TB_color = 0xd9b026ff
+PB_color = 0xff0a00ff
+EB_color = 0xffffffff
+
+[file_explorer.state]
+font_size = 14
+noisy_dir_root = false
+rooted_filters = ""
+
+[feed.colors]
+info = 0xd4d4d4ff
+warning = 0xe3811cff
+error = 0xff0000ff
+
+[feed.state]
+feed_font_size = 14
+
+[widget.colors]
+window_border = 0xadd6ff26
+window_background = 0x1f1f1fcb
+window_title_background = 0xadd6ff26
+window_title_font_color = 0xd4d4d4ff
+window_close_button_hover = 0xf44747ff
+window_close_button_pressed = 0xcd1010ff
+scrollbar_inactive = 0xadd6ff26
+scrollbar_active = 0xadd6ffff
+scrollbar_track_outline = 0xadd6ff26
+custom_hotkey_fill = 0x49ff31
+drag_drop_zone = 0xadd6ffff
+outline_selection = 0x9fffff
+warning = 0xe3811cff
+error = 0xff0000ff
+good = 0xff00ff
+active_button = 0x98ffff
+loading_bar_progress = 0x98ff80
+loading_bar_complete = 0x9a0280
+active_tab_highlight = 0x98ff80
+active_selection = 0x98ffff
+
+[widget.state]
+window_title_font_size = 14
+scrollbar_width = 10
+scrollbar_min_size = 20
+
+[system.core]
+preferred_file_explorer = ''
+core_window_rect = [112, 38, 2842, 1800]
+async_update_frequency_ms = 1000
+editor_theme = 'ColorTheme_Fred'
+fullscreen = false
+maximized = false
+disable_sessions = false
+disable_plugins = false
+noisy_session_info = false
+
+[system.fonts]
+fallback_fonts_folder = '/System/Library/Fonts'
+current_font = ''
+
+[system.effects]
+audio_keystroke = []
+audio_return = []
+postprocessing_enabled = true
+screen_warp = true
+multipass_crt = true
+mute_audio = false
+suppress_audio_startup = true
+crt_mode = false
+animate_cursor = true
+light_mode = false
+smooth_scroll = true
+highlight_line_copy = true
+highlight_line_edit = true
+subpixel_font_aa = false
+
+[hotkey.state]
+hotkeys = '/Users/thomas/.config/fred/hotkeys.toml'
+
+[plugins.core]
+plugins_source_file = ''
+gen_base_template_only = false

@@ -28,3 +28,6 @@ git/.gitconfig.local
 atom/packages/
 atom/storage/
 atom/recovery/
+
+# fred
+fred/config/fred.session
