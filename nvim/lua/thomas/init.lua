@@ -92,7 +92,7 @@ vim.opt.shell        = '/bin/zsh -i'
 vim.opt.shellcmdflag = '-ic'
 
 
--- Mouse Enhancement - Kitty
+-- Mouse Enhancement
 -- ----------------------------------------------------------------------------
 
 vim.opt.mouse = "a"          -- Mouse Support - prevent copying line numbers
@@ -217,9 +217,6 @@ require("lazy").setup({
 
   -- Pretty icons
   'kyazdani42/nvim-web-devicons',
-
-  -- Kitty - Syntax Highlighting Support
-  "fladson/vim-kitty",
 
   -- Jai Syntax Highlighting
   "rluba/jai.vim",

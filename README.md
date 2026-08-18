@@ -283,6 +283,8 @@ These are some helpful extras which I figure could be helpful to just show peopl
     Github was bought by Microsoft.  Additionally though, it was getting long
     in the tooth regarding speed.  Either way though, it was, and still is,
     a better IDE than VScode.
+* Kitty
+  * Whenever I switched to Ghostty, so this was 2024?
 
 
 [Quickstart]: #quickstart
