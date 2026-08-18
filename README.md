@@ -195,8 +195,6 @@ configurations in these dotfiles.
   - `brew install zprint`
 - Install [Nerd Font]
   - This is required to use the `nvim-web-devicons`
-  - Note: if the fonts aren't working in nvim, check iTerm2 profiles > Text
-    and make sure they're set correctly.
 - Open Nvim
 - Install Plugins
   ```bash
