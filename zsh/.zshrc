@@ -158,8 +158,8 @@ alias jai="$HOME/code/lang/jai/bin/jai-macos"
 # https://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
 alias loadruby='
     version=3.4.1
-    source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-    source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+    source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+    source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 
     if ! chruby | grep -q "ruby-${version}"; then
         echo "Ruby ${version} not found, installing..."
@@ -177,4 +177,4 @@ alias loadruby='
 
 # @note must stay the last thing in this file. It wraps every widget defined
 # before it, so anything loaded after it won't be highlighted.
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
