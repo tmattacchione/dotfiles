@@ -144,7 +144,7 @@ export PATH=$PATH:~/.vim/plugged/vim-iced/bin
 
 alias cap="dumpcap -i 1 -i 10 -w ~/wireshark-capture/data.pcapng -b filesize:500000 -b files:5"
 
-export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS$PATH
+export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS
 
 # ------------------------------------------------------------------------------
 # Rust
