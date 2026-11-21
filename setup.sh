@@ -32,7 +32,7 @@ info "Setting up your mac..."
 # =============================================================================
 
 info "Brew - Checking if brew is already installed"
-if [[ $(which brew) == 'brew not found' ]]; then
+if ! command -v brew >/dev/null 2>&1; then
     # http://brew.sh/
     info "Brew - Install"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
