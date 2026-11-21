@@ -53,7 +53,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 chflags nohidden ~/Library
 
 # Always open everything in Finder's column view. This is important.
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+defaults write com.apple.finder FXPreferredViewStyle Nlsv
 
 # Show hidden files and file extensions by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -92,7 +92,7 @@ defaults write com.apple.screencapture type -string "png"
 
 # ask for password immediatley after the computer sleeps
 defaults write com.apple.screensaver askForPassword -bool true
-defaults write com.apple.screensaver askForPasswordDelay 0
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # set the screen saver delay in seconds, 120 = 2 minutes
 defaults -currentHost write com.apple.screensaver idleTime 120
@@ -111,7 +111,7 @@ defaults write com.apple.dock launchanim -bool false
 # Hot corners:
 # Top left screen corner - start screen saver
 defaults write com.apple.dock wvous-tl-corner -int 5
-defaults write com.apple.dock wvous-tl-modifier -int 0hup0-
+defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # =============================================================================
 # TIME MACHINE
@@ -191,7 +191,7 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # =============================================================================
 
 # turn on debug mode for development
-defaults write com.apple.Safari IncludeInternalDebugMenu 1
+defaults write com.apple.Safari IncludeInternalDebugMenu -int 1
 
 
 # =============================================================================
