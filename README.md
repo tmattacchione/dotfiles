@@ -1,10 +1,6 @@
 # DOTFILES
 
-Welcome to my dotfiles; You are very welcome to use them :smile:
-
-You can take what you like from these dotfiles a la carte, or feel free to use
-the [Quickstart] below which will walk you through how I setup a
-new mac for development.
+This is how I configure the tools I work with.
 
 * [Quickstart]
 * [Gotchas]
@@ -20,32 +16,20 @@ new mac for development.
 * [Graveyard]
 
 
-## Quickstart Explained
+## Quickstart
 
-> This setup has been tested on macOS **10.12.x** Sierra and up.  Some of the
-> commands belows might be specific to my tastes.  When this is the case I have
-> added an "optional" label to the step.  You can ignore these if you like.
-> Commands beginning with `$` are meant to be run in the terminal.
+This repo is configs and a program which applies the configs.  To use this:
 
-
-This quickstart is going to run through all the steps required to start using
-these dotfiles.  As much of the process as we're comfortable with automating
-has been automated.  At a high level, here is what you will do (don't worry,
-it's all explained below in detail):
-
-- Download the dotfiles
 - Install Brew
 - Brew install everything in the [Brewfile]
-- Symlink dotfiles
 - Set the default shell environment to zsh
 - Run the `setup` script
-- preferred macOS settings
 
-And with that, let's start with setting up the dotfiles:
+That's the high level, this is how I actually apply the configs:
 
 - Update macOS
   - [upgrade macos]
-  > rationale: we're making sure everything on your system is good to go :smile:
+  > Even if your machine is new check for the updates
 - Install Xcode Command Line Tools
   ```bash
   $ xcode-select --install
@@ -58,9 +42,9 @@ And with that, let's start with setting up the dotfiles:
   > We will install dotfiles here
 - clone this repo
   ```bash
-  $ git clone https://github.com/athomasoriginal/dotfiles.git
+  $ git clone https://github.com/tmattacchione/dotfiles.git
   ```
-  > This is you installing your dotfiles
+  > Get the configs on your local machine
 - create your own private dotfiles
   ```bash
   $ touch dotfiles/git/.gitconfig.local
@@ -75,7 +59,7 @@ And with that, let's start with setting up the dotfiles:
   $ vim dotfiles/git/.gitconfig.local
   ```
   > I have `vim`  selected here because it will be on most peoples machines.
-- Configure your `.gitconfig.local**`
+- Configure your `.gitconfig.local`
   ```bash
   [user]
     name = <your-git-username>
@@ -87,12 +71,10 @@ And with that, let's start with setting up the dotfiles:
     out what you don't need.
 - Move into `dotfiles` dir
 - Run the setup script
-  ```bash
-  $ source setup.sh
+  ```command
+  jai first.jai
   ```
-  > Please note that you will be prompted to enter your computer password while
-  > the brew apps are being installed. To see what this is doing, checkout
-  > the [Setup Explained] section
+  > Prompts you to confirm changes with system prompts
 - Open new terminal tab and make sure there are no warnings
 
 Once you have completed the above steps, I like to perform the following steps
@@ -129,7 +111,7 @@ Our `zsh` setup comes with the following configurations:
 
 There may be `.zshrc` aliases or configurations that you may want to keep private,
 you can create a file called `.extras` in the `zsh` directory and this will be
-picked up by `.zsh_profile`.
+picked up by `.zshrc`.
 
 ### Node
 
@@ -183,12 +165,7 @@ configurations in these dotfiles.
 
 **Gotchas**
 
-- If `vim-prettier` can't find the prettier exe:
-  - move to `~/.vim/plugged/vim-prettier`
-  - run yarn install
-  > This should be a last resort though as our configuration of this plugin should
-  > just do this for us automatically.  Also note that if you don't autoload nvm
-  > like me, run that first.
+- If `vim-prettier` can't find the prettier exe
 
 
 **Delete Nvim**
@@ -205,8 +182,8 @@ configurations in these dotfiles.
 Here are some of the shell tools **aliases**:
 
 * `loadnvm`
-  * setup nove env in the current shell.  It's a remarkably slow tool so I
-    manually call it when needed to keep the shall moving fast.
+  * setup node env in the current shell.  It's a remarkably slow tool so I
+    manually call it when needed to keep the shell fast.
 * `loadruby`
   * setup Ruby 3.4.1 in the current shell.  I only use Ruby for Kamal so this
     is just a way to keep the shell clean.
@@ -235,6 +212,9 @@ These are some helpful extras which I figure could be helpful to just show peopl
       Because instead of having to use `n` tools to do a thing I can do it all
       with a single programming language, talk directly to the system and better
       understand how everything is working.
+    * As of this date I heavily refactored the automated portion of these
+      configs.  Thus, where these were started on **10.12.x** I have no idea
+      if they kept working or not so we'll call this a fresh start.
 * duti
   * Date: Nov 21, 2026
   * Notes:
@@ -267,8 +247,6 @@ These are some helpful extras which I figure could be helpful to just show peopl
 
 
 [Quickstart]: #quickstart
-[Post Setup]: #post-setup
-[Setup Explained]: #setup-explained
 [Gotchas]: #Gotchas
 [Language Details]: #language-details
 [Extras]: #extras
