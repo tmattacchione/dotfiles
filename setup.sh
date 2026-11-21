@@ -107,7 +107,7 @@ ln -sf ~/dotfiles/fred/config                  ~/.config/fred
 # =============================================================================
 
 info "macOS - init macOS preferences"
-source .macOS
+source .macos
 
 info "macOS - init zshrc"
 source ~/.zshrc
