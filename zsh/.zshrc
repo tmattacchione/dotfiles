@@ -21,6 +21,13 @@ export GPG_TTY=$(tty)           # GPG git commit signing
 # ------------------------------------------------------------------------------
 # ZSH Config
 # ------------------------------------------------------------------------------
+# @note `path` is an array zsh keeps in sync with PATH. -U drops duplicates,
+# so adding a folder twice is harmless. Add folders with:
+#
+#     path+=(/some/dir)          end of PATH
+#     path=(/some/dir $path)     front of PATH (wins over the others)
+typeset -U path
+
 export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 
 # @note oh-my-zsh runs compinit itself when it's sourced below, so we don't run
@@ -93,12 +100,12 @@ alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
 # frustrated that jenv was taking 50% of the total load time.
 export JENV_ROOT="${JENV_ROOT:=${HOME}/.jenv}"
 if ! type jenv > /dev/null && [ -f "${JENV_ROOT}/bin/jenv" ]; then
-    export PATH="${JENV_ROOT}/bin:${PATH}"
+    path=($JENV_ROOT/bin $path)
 fi
 
 # Lazy load jenv
 if type jenv > /dev/null; then
-    export PATH="${JENV_ROOT}/bin:${JENV_ROOT}/shims:${PATH}"
+    path=($JENV_ROOT/bin $JENV_ROOT/shims $path)
     function jenv() {
         unset -f jenv
         eval "$(command jenv init -)"
@@ -110,8 +117,8 @@ fi
 # ------------------------------------------------------------------------------
 # POSTGRES
 # ------------------------------------------------------------------------------
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+path+=(/Applications/Postgres.app/Contents/Versions/latest/bin)
+path=($HOMEBREW_PREFIX/opt/libpq/bin $path)
 
 
 # ------------------------------------------------------------------------------
@@ -125,14 +132,13 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 alias cap="dumpcap -i 1 -i 10 -w ~/wireshark-capture/data.pcapng -b filesize:500000 -b files:5"
 
-export PATH=$PATH:/Applications/Wireshark.app/Contents/MacOS
+path+=(/Applications/Wireshark.app/Contents/MacOS)
 
 # ------------------------------------------------------------------------------
 # Rust
 # ------------------------------------------------------------------------------
 
-export PATH=$PATH:$HOME/.cargo/bin
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+path+=($HOME/.cargo/bin)
 
 
 # ------------------------------------------------------------------------------
