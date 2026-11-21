@@ -76,7 +76,6 @@ rm -rf ~/.vimrc
 rm -rf ~/.extras
 rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
 rm -rf ~/.duti
-rm -rf ~/.gitconfig.local
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
 rm -rf ~/.config/kitty
@@ -87,12 +86,12 @@ info "dotfiles - symlinking dotfiles"
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
 ln -sf ~/dotfiles/zsh/.zprofile                ~/.zprofile
 ln -sf ~/dotfiles/zsh/.zshrc                   ~/.zshrc
+ln -sf ~/dotfiles/zsh/.zshenv                  ~/.zshenv
 ln -sf ~/dotfiles/zsh/themes/thomas.zsh-theme  ~/.oh-my-zsh/themes/thomas.zsh-theme
 ln -sf ~/dotfiles/git/.gitignore               ~/.gitignore
 ln -sf ~/dotfiles/git/.gitconfig               ~/.gitconfig
 ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -sf ~/dotfiles/git/.gitcommitmessage        ~/.gitcommitmessage
-ln -sf ~/dotfiles/git/.gitconfig.local         ~/.gitconfig.local
 ln -sf ~/dotfiles/zsh/.extras                  ~/.extras
 ln -sf ~/dotfiles/.duti                        ~/.duti
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
