@@ -107,4 +107,4 @@ info "macOS - init macOS preferences"
 source .macos
 
 info "macOS - running duti"
-source ~/.duti
+duti ~/.duti
