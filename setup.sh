@@ -51,7 +51,6 @@ info "Brew - Upgading packages"
 brew upgrade
 
 info "Brew - installing brew bundle + all things in our brewfile"
-brew tap homebrew/bundle
 brew bundle
 
 # oh-my-zsh
@@ -78,7 +77,6 @@ rm -rf ~/.oh-my-zsh/themes/thomas.zsh-theme
 rm -rf ~/.duti
 rm -rf ~/.clojure/deps.edn
 rm -rf ~/.config/nvim
-rm -rf ~/.config/kitty
 rm -rf ~/.config/ghostty
 rm -rf ~/.config/fred
 
@@ -96,7 +94,6 @@ ln -sf ~/dotfiles/zsh/.extras                  ~/.extras
 ln -sf ~/dotfiles/.duti                        ~/.duti
 ln -sf ~/dotfiles/.clojure/deps.edn            ~/.clojure/deps.edn
 ln -sf ~/dotfiles/nvim/                        ~/.config/nvim
-ln -sf ~/dotfiles/kitty                        ~/.config/kitty
 ln -sf ~/dotfiles/ghostty                      ~/.config/ghostty
 ln -sf ~/dotfiles/xcode/.lldbinit-Xcode        ~/.lldbinit-Xcode
 ln -sf ~/dotfiles/fred/config                  ~/.config/fred
@@ -108,9 +105,6 @@ ln -sf ~/dotfiles/fred/config                  ~/.config/fred
 
 info "macOS - init macOS preferences"
 source .macos
-
-info "macOS - init zshrc"
-source ~/.zshrc
 
 info "macOS - running duti"
 source ~/.duti
