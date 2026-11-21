@@ -170,3 +170,11 @@ alias loadruby='
       echo "Ruby ${version} found, enabling..."
       chruby ruby-${version}
     fi'
+
+# ------------------------------------------------------------------------------
+# Syntax highlighting
+# ------------------------------------------------------------------------------
+
+# @note must stay the last thing in this file. It wraps every widget defined
+# before it, so anything loaded after it won't be highlighted.
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
