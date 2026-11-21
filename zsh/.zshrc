@@ -177,4 +177,5 @@ alias loadruby='
 
 # @note must stay the last thing in this file. It wraps every widget defined
 # before it, so anything loaded after it won't be highlighted.
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/highlighters
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
