@@ -78,7 +78,7 @@ unset file;
 # ------------------------------------------------------------------------------
 
 # quick access to config files
-alias dotfiles="cd ~/dotfiles" # open dotfiles
+alias dotfiles='cd $DOTFILES'
 
 # docker
 alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
