@@ -14,7 +14,6 @@ new mac for development.
   * [c languages]
 * [Dev Tools]
   * [Neovim]
-  * [duti]
   * [macos]
   * [shell]
 * [Extras]
@@ -222,13 +221,6 @@ configurations in these dotfiles.
   brew uninstall nvim
   ```
 
-### duti
-
-duti is a program built to make it easier to configure which filetypes are
-opened by which application. For example, lets say you want all `.html` files
-to be opened by `Sublime` and not the default browser, we can configure this in
-Duti. For more info, see the `.duti` file.
-
 ### Shell
 
 Here are some of the shell tools **aliases**:
@@ -259,6 +251,11 @@ These are some helpful extras which I figure could be helpful to just show peopl
 
 > This section is for my fallen Homies. 🪦 🍻
 
+* duti
+  * Date: Nov 21, 2026
+  * Notes:
+    * This hasn't been used in a while because I found it flaky, but it's been
+      replaced by my own custom tool which does the same thing.
 * iterm2
   * Died whenever I switched over to Kitty.  The following is setup information
     which I'm keeping around for reference.
@@ -298,7 +295,6 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [c languages]: #c-languages
 [Dev Tools]: #dev-tools
 [Neovim]: #Neovim
-[duti]: #duti
 [shell]: #shell
 [macos]: #macos
 [Graveyard]: #Graveyard
