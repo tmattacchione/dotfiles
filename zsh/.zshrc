@@ -23,8 +23,6 @@ export GPG_TTY=$(tty)           # GPG git commit signing
 # ZSH Config
 # ------------------------------------------------------------------------------
 
-export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
-
 # https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206 speed
 # up the zsh load time by only checking if zcompdump needs regenerating once a
 # day
@@ -91,8 +89,6 @@ alias containers="docker ps --format 'table {{.Names}}\t{{.Image}}'"
 # ------------------------------------------------------------------------------
 # NODE
 # ------------------------------------------------------------------------------
-export NVM_LAZY_LOAD=true
-export NVM_COMPLETION=true
 export NVM_DIR="$HOME/.nvm"
 
 alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"'
@@ -130,9 +126,6 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 # ------------------------------------------------------------------------------
 # Clojure
 # ------------------------------------------------------------------------------
-
-# vim-iced
-export PATH=$PATH:~/.vim/plugged/vim-iced/bin
 
 
 # ------------------------------------------------------------------------------
