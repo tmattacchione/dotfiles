@@ -15,32 +15,22 @@
 #export PATH="/usr/local/bin:$PATH"
 
 
-export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 export DOTFILES=$HOME/dotfiles  # path to dotfiles
 export GPG_TTY=$(tty)           # GPG git commit signing
 
 # ------------------------------------------------------------------------------
 # ZSH Config
 # ------------------------------------------------------------------------------
+export ZSH=$HOME/.oh-my-zsh     # Path to oh-my-zsh installation
 
-# https://gist.github.com/ctechols/ca1035271ad134841284#gistcomment-2308206 speed
-# up the zsh load time by only checking if zcompdump needs regenerating once a
-# day
-autoload -Uz compinit
-if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
-  compinit
-else
-  compinit -C
-fi
+# @note oh-my-zsh runs compinit itself when it's sourced below, so we don't run
+# it here too.
 
 # zsh theme name - see `themes/thomas.zsh-theme`
 ZSH_THEME="thomas"
 
 # auto-update zsh after 13 days
 export UPDATE_ZSH_DAYS=13
-
-# make zsh-syntax-highlighting available - highlight cli commands as typing
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh plugins to improve your workflow
 plugins=(
