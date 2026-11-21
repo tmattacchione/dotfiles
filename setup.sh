@@ -81,6 +81,7 @@ rm -rf ~/.config/ghostty
 rm -rf ~/.config/fred
 
 info "dotfiles - symlinking dotfiles"
+mkdir -p ~/.clojure ~/.config
 ln -sf ~/dotfiles/zsh/.zsh_profile             ~/.zsh_profile
 ln -sf ~/dotfiles/zsh/.zprofile                ~/.zprofile
 ln -sf ~/dotfiles/zsh/.zshrc                   ~/.zshrc
