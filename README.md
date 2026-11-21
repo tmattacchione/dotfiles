@@ -14,7 +14,6 @@ new mac for development.
   * [c languages]
 * [Dev Tools]
   * [Neovim]
-  * [macos]
   * [shell]
 * [Extras]
   * [Aliases]
@@ -39,7 +38,7 @@ it's all explained below in detail):
 - Brew install everything in the [Brewfile]
 - Symlink dotfiles
 - Set the default shell environment to zsh
-- Run the `setup.sh` script
+- Run the `setup` script
 - preferred macOS settings
 
 And with that, let's start with setting up the dotfiles:
@@ -83,26 +82,6 @@ And with that, let's start with setting up the dotfiles:
     email = <your-email>
   ```
   > More details can be found in [local gitconfig]
-- verify the `.macOS` file
-  - Open `.macOS` file
-  - Update the 3 variables at the top:
-    ```bash
-    COMPUTERNAME="your-comp-name"
-    HOSTNAME='your-host-name'
-    LOCALHOSTNAME='your-local-host-name'
-    ```
-  > This step is really about choosing what you like and don't like in my `.macos`
-  > file.  This file, located at `~dotfiles/.macOS`, is a file that configures
-  > your mac. Not sure what this means? Well, you know how when you get a mac
-  > you have to make decisions like the sensitivty level of your trackpad, or
-  > your display settings? Turns out you can automate this setup. This file is
-  > going to automate these things for you.  With this in mind, these are
-  > preferences for how I like to work with my mac. Most are pretty good!  The
-  > ones that I think may be specific to me are listed below.  You should take
-  > a look and verify that you want to keep them.  Just delete or comment out
-  > the stuff you don't want.
-  - section - screen:
-    - where the screenshots are stored
 - verify the `brewfile`
   - The `brewfile` contains programs I usually always need.  Delete or comment
     out what you don't need.
@@ -232,9 +211,6 @@ Here are some of the shell tools **aliases**:
   * setup Ruby 3.4.1 in the current shell.  I only use Ruby for Kamal so this
     is just a way to keep the shell clean.
 
-### macos
-
-- [Preferences by the commandline]
 
 ## Extras
 
@@ -251,6 +227,14 @@ These are some helpful extras which I figure could be helpful to just show peopl
 
 > This section is for my fallen Homies. 🪦 🍻
 
+* setup
+  * Date: Nov 21, 2026
+  * Notes:
+    * I used to have setup done via a bash script and a .macos file.  I have
+      since rewritten it in one `jai` script which runs everything.  Why?
+      Because instead of having to use `n` tools to do a thing I can do it all
+      with a single programming language, talk directly to the system and better
+      understand how everything is working.
 * duti
   * Date: Nov 21, 2026
   * Notes:
@@ -287,7 +271,6 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Setup Explained]: #setup-explained
 [Gotchas]: #Gotchas
 [Language Details]: #language-details
-[macos]: #macos
 [Extras]: #extras
 [Aliases]: #aliases
 [node]: #node
@@ -296,7 +279,6 @@ These are some helpful extras which I figure could be helpful to just show peopl
 [Dev Tools]: #dev-tools
 [Neovim]: #Neovim
 [shell]: #shell
-[macos]: #macos
 [Graveyard]: #Graveyard
 
 [Preferences by the commandline]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
